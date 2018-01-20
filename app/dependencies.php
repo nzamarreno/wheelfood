@@ -54,11 +54,11 @@ $container['em'] = function ($c) {
 // Action factories
 // -----------------------------------------------------------------------------
 
-$container['App\Action\HomeAction'] = function ($c) {
-    return new App\Action\HomeAction($c->get('view'), $c->get('logger'));
+$container['App\Controller\HomeController'] = function ($c) {
+    return new App\Controller\HomeController($c->get('view'), $c->get('logger'));
 };
 
-$container['App\Action\PhotoAction'] = function ($c) {
-    $photoResource = new \App\Resource\PhotoResource($c->get('em'));
-    return new App\Action\PhotoAction($photoResource);
+$container['App\Controller\MusicController'] = function ($c) {
+    $musicRepository = new App\Repository\MusicRepository($c->get('em'));
+    return new App\Controller\MusicController($musicRepository);
 };

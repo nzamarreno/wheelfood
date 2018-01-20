@@ -3,7 +3,7 @@ namespace App;
 
 use Doctrine\ORM\EntityManager;
 
-abstract class AbstractResource
+abstract class AbstractRepository
 {
     /**
      * @var \Doctrine\ORM\EntityManager

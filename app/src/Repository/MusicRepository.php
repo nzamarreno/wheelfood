@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Resource;
+namespace App\Repository;
 
-use App\AbstractResource;
+use App\AbstractRepository;
 
 /**
  * Class Resource
  * @package App
  */
-class PhotoResource extends AbstractResource
+class MusicRepository extends AbstractRepository
 {
     /**
      * @param string|null $slug
@@ -19,13 +19,8 @@ class PhotoResource extends AbstractResource
     {
         if ($slug === null) {
             $music = $this->entityManager->getRepository('App\Entity\Music')->findAll();
-            $music = array_map(
-                function ($music) {
-                    return $music->getArrayCopy();
-                },
-                $music
-            );
-
+            var_dump($music);
+        
             return $music;
         } else {
             $music = $this->entityManager->getRepository('App\Entity\Music')->findOneBy(

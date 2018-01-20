@@ -1,5 +1,6 @@
 <?php
 // Routes
 
-$app->get('/api/photos', 'App\Action\PhotoAction:fetch');
-$app->get('/api/photos/{slug}', 'App\Action\PhotoAction:fetchOne');
+$app->get('/', 'App\Controller\HomeController:home');
+$app->get('/api/musics', 'App\Controller\MusicController:fetch');
+$app->get('/api/music/{slug}', 'App\Controller\MusicController:fetchOne');

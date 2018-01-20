@@ -1,13 +1,17 @@
 <?php
-namespace App\Action;
+namespace App\Controller;
 
 use Slim\Views\Twig;
 use Psr\Log\LoggerInterface;
 
-final class HomeAction
+final class HomeController
 {
     private $view;
     private $logger;
+
+    public function home(){
+        echo "Hello";
+    }
 
     public function __construct(Twig $view, LoggerInterface $logger)
     {

@@ -1,29 +1,29 @@
 <?php
-namespace App\Action;
+namespace App\Controller;
 
-use App\Resource\PhotoResource;
+use App\Repository\MusicRepository;
 
-final class PhotoAction
+final class MusicController
 {
-    private $photoResource;
+    private $MusicRepository;
 
-    public function __construct(PhotoResource $photoResource)
+    public function __construct(MusicRepository $MusicRepository)
     {
-        $this->photoResource = $photoResource;
+        $this->MusicRepository = $MusicRepository;
     }
 
     public function fetch($request, $response, $args)
     {
-        $photos = $this->photoResource->get();
-        return $response->withJSON($photos);
+        $musics = $this->MusicRepository->get();
+        return $response->withJSON($musics);
     }
 
     public function fetchOne($request, $response, $args)
     {
-        $photo = $this->photoResource->get($args['slug']);
-        if ($photo) {
-            return $response->withJSON($photo);
+        $Music = $this->MusicRepository->get($args['slug']);
+        if ($Music) {
+            return $response->withJSON($Music);
         }
-        return $response->withStatus(404, 'No photo found with that slug.');
+        return $response->withStatus(404, 'No Music found with that slug.');
     }
 }
