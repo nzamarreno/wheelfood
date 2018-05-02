@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\AbstractRepository;
+use App\Entity\Music;
 
 /**
  * Class Resource
@@ -15,19 +16,28 @@ class MusicRepository extends AbstractRepository
      *
      * @return array
      */
-    public function get($slug = null)
+    public function get()
     {
-        if ($slug === null) {
-            $music = $this->entityManager->getRepository('App\Entity\Music')->findAll();
-            var_dump($music);
-        
-            return $music;
-        } else {
-            $music = $this->entityManager->getRepository('App\Entity\Music')->findOneBy(
-                array('slug' => $slug)
-            );
-        }
+        return $this->entityManager->getRepository('App\Entity\Music')->findAll();
+    }
 
-        return false;
+    public function getBySlug(string $slug)
+    {
+        return $this->entityManager->getRepository('App\Entity\Music')->findOneBy(
+            array('slug' => $slug)
+        );
+    }
+
+    public function addEntity(Music $music)
+    {
+        $this->entityManager->persist($music);
+        $this->entityManager->flush();
+    }
+
+    public function deleteEntityById(Int $musicId)
+    {
+        $music_remove = $this->entityManager->getRepository('App\Entity\Music')->findOneBy(array('id' => $musicId));
+        $this->entityManager->remove($music_remove);
+        $this->entityManager->flush();
     }
 }

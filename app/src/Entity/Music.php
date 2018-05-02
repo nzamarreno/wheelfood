@@ -1,7 +1,6 @@
 <?php
 namespace App\Entity;
 
-use App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -15,22 +14,22 @@ class Music
      * @ORM\Column(name="id", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    public $id;
 
     /**
      * @ORM\Column(type="string", length=64)
      */
-    protected $title;
+    public $title;
 
     /**
      * @ORM\Column(type="string", length=150)
      */
-    protected $genre;
+    public $genre;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    protected $slug;
+    public $slug;
 
     /**
      * Get photo id
@@ -53,6 +52,16 @@ class Music
     }
 
     /**
+     * Set photo title
+     *
+     * @ORM\Set string
+     */
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
+
+    /**
      * Get photo slug
      *
      * @ORM\return string
@@ -63,6 +72,16 @@ class Music
     }
 
     /**
+     * Get photo slug
+     *
+     * @ORM\return string
+     */
+    public function setSlug(string $slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
      * Get photo image
      *
      * @ORM\return string
@@ -70,5 +89,10 @@ class Music
     public function getGenre()
     {
         return $this->genre;
+    }
+
+    public function setGenre(string $genre)
+    {
+        $this->genre = $genre;
     }
 }

@@ -53,12 +53,13 @@ $container['em'] = function ($c) {
 // -----------------------------------------------------------------------------
 // Action factories
 // -----------------------------------------------------------------------------
-
 $container['App\Controller\HomeController'] = function ($c) {
-    return new App\Controller\HomeController($c->get('view'), $c->get('logger'));
+    $musicRepository = new App\Repository\MusicRepository($c->get('em'));
+    return new App\Controller\HomeController($c->get('view'), $c->get('logger'), $musicRepository);
 };
 
 $container['App\Controller\MusicController'] = function ($c) {
     $musicRepository = new App\Repository\MusicRepository($c->get('em'));
     return new App\Controller\MusicController($musicRepository);
 };
+
