@@ -54,8 +54,7 @@ $container['em'] = function ($c) {
 // Action factories
 // -----------------------------------------------------------------------------
 $container['App\Controller\HomeController'] = function ($c) {
-    $musicRepository = new App\Repository\MusicRepository($c->get('em'));
-    return new App\Controller\HomeController($c->get('view'), $c->get('logger'), $musicRepository);
+    return new App\Controller\HomeController($c->get('view'), $c->get('logger'));
 };
 
 $container['App\Controller\MusicController'] = function ($c) {
@@ -63,3 +62,14 @@ $container['App\Controller\MusicController'] = function ($c) {
     return new App\Controller\MusicController($musicRepository);
 };
 
+$container['App\Controller\FoodController'] = function ($c) {
+    $userRepository = new App\Repository\UserRepository($c->get('em'));
+    $foodRepository = new App\Repository\FoodRepository($c->get('em'));
+    return new App\Controller\FoodController($userRepository, $foodRepository);
+};
+
+$container['App\Controller\UserController'] = function ($c) {
+    $userRepository = new App\Repository\UserRepository($c->get('em'));
+    $foodRepository = new App\Repository\FoodRepository($c->get('em'));
+    return new App\Controller\UserController($userRepository, $foodRepository);
+};

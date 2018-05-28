@@ -3,10 +3,7 @@
     "description": "Simple Slim Framework 3 skeleton with Twig & Doctrine.",
     "license": "BSD-3-Clause",
     "type": "project",
-    "keywords": [
-        "slim-framework",
-        "skeleton"
-    ],
+    "keywords": ["slim-framework", "skeleton"],
     "authors": [
         {
             "name": "Nicolas Zamarreno",
@@ -24,6 +21,8 @@
         "slim/twig-view": "^1.1",
         "slim/flash": "^0.1.0",
         "monolog/monolog": "^1.13",
-        "doctrine/orm": "~2.5"
+        "doctrine/orm": "~2.5",
+        "tuupola/slim-jwt-auth": "^2.4",
+        "phpunit/phpunit": "^6.5"
     }
 }

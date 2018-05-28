@@ -3,33 +3,26 @@ namespace App\Controller;
 
 use Slim\Views\Twig;
 use Psr\Log\LoggerInterface;
-use App\Repository\MusicRepository;
-use App\Entity\Music;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use \Slim\Http\Response as Response;
 
 final class HomeController
 {
     private $view;
     private $logger;
-    private $_musicRepository;
 
-    public function __construct(Twig $view, LoggerInterface $logger, MusicRepository $musicRepository)
+    public function __construct(Twig $view, LoggerInterface $logger)
     {
         $this->view = $view;
         $this->logger = $logger;
-        $this->_musicRepository = $musicRepository;
     }
 
-    public function home()
+    public function home(Request $request, Response $response)
     {
-        $music = new Music();
-        $music->setTitle('Je suis perdu');
-        $music->setSlug('Bonjour');
-        $music->setGenre('Bonjour');
-        
-        $this->_musicRepository->AddEntity($music);
+        $this->view->render($response, 'home.twig');
     }
 
-    public function dispatch($request, $response, $args)
+    public function dispatch(Request $request, Response $response, $args)
     {
         $this->logger->info("Home page action dispatched");
 

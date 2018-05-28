@@ -31,3 +31,12 @@ This package is just for create my little API
 │   │          └── home.twig
 ├── public
 ```
+
+## Some commands
+
+```bash
+# doctrine orm[command] [-options] [path-dest]
+$ php vendor/doctrine/orm/bin/doctrine orm:generate:entities --generate-annotations="true" ./
+
+$ php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update
+```
