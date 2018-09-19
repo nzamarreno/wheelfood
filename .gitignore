@@ -2,3 +2,5 @@ vendor/
 log/*
 cache/*
 composer.phar
+front/node_modules
+front/dist

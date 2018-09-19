@@ -1,0 +1,77 @@
+@heightButton: 5rem;
+
+.button {
+    box-sizing: border-box;
+
+    border: none;
+
+    &--round {
+        width: 5.7rem;
+        height: 5.7rem;
+
+        cursor: pointer;
+
+        border-radius: 50%;
+        background: @gradient;
+    }
+
+    &--fill {
+        font-family: @font-primary;
+        font-size: 1.5rem;
+        font-weight: @semi-bold;
+
+        display: inline-block;
+
+        height: @heightButton;
+        padding: 1rem 3rem;
+
+        cursor: pointer;
+
+        color: white;
+        border-radius: 1000rem;
+        background: @gradient;
+
+        @media screen and (min-width: @sm) {
+            font-size: 2rem;
+        }
+    }
+
+    &--stroke {
+        font-family: @font-primary;
+        font-size: 1.5rem;
+        font-weight: @semi-bold;
+
+        display: inline-block;
+
+        height: @heightButton;
+        padding: 1rem 3rem;
+
+        cursor: pointer;
+
+        color: @color-primary;
+        border: 0.2rem solid @color-primary;
+        border-radius: 1000rem;
+        background: white;
+
+        @media screen and (min-width: @sm) {
+            font-size: 2rem;
+        }
+    }
+
+    &__icon {
+        display: none !important;
+
+        padding-left: 1rem;
+        @media screen and (min-width: @sm) {
+            display: inline-block !important;
+        }
+    }
+}
+
+.button-wrapper {
+    &--center {
+        margin: 4rem 0 2rem 0;
+
+        text-align: center;
+    }
+}

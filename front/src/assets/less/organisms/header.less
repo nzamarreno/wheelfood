@@ -1,0 +1,101 @@
+.header {
+    &__logo {
+        display: block;
+
+        width: 30rem;
+
+        @media screen and (min-width: @lg) {
+            width: 50rem;
+        }
+    }
+
+    &__connexion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 1rem;
+
+        @media screen and (min-width: @sm) {
+            margin-top: 0;
+        }
+
+        & button:first-child {
+            margin-right: 1rem;
+
+            @media screen and (min-width: @sm) {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    &__profiler {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 1rem;
+
+        @media screen and (min-width: @sm) {
+            justify-content: flex-end;
+
+            margin-top: 0;
+        }
+    }
+}
+
+.header-profil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__avatar {
+        width: 5rem !important;
+        height: 5rem !important;
+        margin-right: 1rem;
+    }
+
+    &__deconnexion {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        display: block;
+
+        cursor: pointer;
+        text-align: right;
+
+        opacity: 0.5;
+    }
+
+    &__pseudo {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+
+    &__email {
+        font-size: 1.4rem;
+
+        margin: 0;
+    }
+}
+
+.card {
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+
+    cursor: pointer;
+    animation: appearCard 5s forwards;
+
+    border-radius: @radius;
+    background: white;
+}
+
+@keyframes appearCard {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 8px -2px 32px 0 rgba(0, 0, 0, 0.1);
+    }
+}

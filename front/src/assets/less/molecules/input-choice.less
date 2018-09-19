@@ -1,0 +1,87 @@
+.input-choice {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 2rem 0;
+
+    @media screen and (min-width: @sm) {
+        flex-direction: row;
+
+        margin: 2rem 2rem;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+
+        @media screen and (min-width: @sm) {
+            width: 8rem;
+            margin-bottom: 0;
+
+            word-wrap: break-word;
+        }
+    }
+
+    &__selection {
+        display: flex;
+        overflow: hidden;
+        flex: 1;
+
+        width: 100%;
+
+        border: 0.2rem solid @color-primary;
+        border-radius: 100rem;
+
+        @media screen and (min-width: @sm) {
+            width: auto;
+            margin-left: 2rem;
+        }
+    }
+
+    &__item {
+        font-size: 1.8rem;
+        font-weight: @semi-bold;
+
+        position: relative;
+        z-index: 10;
+
+        flex: 1;
+
+        padding: 1rem;
+
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: center;
+
+        color: @color-text;
+
+        @media screen and (min-width: @sm) {
+            font-size: 2rem;
+        }
+
+        &:before {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+
+            width: 101%;
+            height: 100%;
+
+            content: "";
+            transition: all 0.3s;
+            transform: scaleX(0);
+            transform-origin: left;
+
+            background: @gradient;
+        }
+
+        &--active {
+            color: white;
+
+            &:before {
+                transform: scaleX(1);
+            }
+        }
+    }
+}

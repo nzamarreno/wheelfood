@@ -2,12 +2,13 @@ version: "3"
 services:
   mysql:
     image: mysql
-    restart: always
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: foodapi
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_USER=nicolas"
+      - "MYSQL_PASSWORD=hello"
+      - "MYSQL_DATABASE=foodapi"
   composer:
     image: composer
     volumes:
@@ -17,5 +18,8 @@ services:
     ports:
       - "1112:1112"
     working_dir: /app
+    links:
+      - mysql
     volumes:
       - ./:/app
+    command: php -S 0.0.0.0:1112 -t public/

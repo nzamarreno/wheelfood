@@ -1,0 +1,27 @@
+.loader {
+    position: relative;
+
+    width: 40%;
+
+    &__animated {
+        transition: all 0.3s;
+    }
+
+    &:before {
+        display: block;
+
+        padding-top: 100%;
+
+        content: "";
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 70%;
+
+        transform: translate(-50%, -50%);
+    }
+}

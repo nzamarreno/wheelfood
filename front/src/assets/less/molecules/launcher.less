@@ -1,0 +1,69 @@
+.launcher {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    &__background {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+
+        width: 60%;
+
+        transform: translate(-50%, -50%);
+
+        opacity: 0.2;
+    }
+
+    &__roundWheel {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+
+        width: 32%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    &__button {
+        position: absolute;
+        z-index: 3;
+        top: 63%;
+        left: 50%;
+
+        width: 28%;
+
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+    }
+
+    &__finger {
+        position: absolute;
+        z-index: 3;
+        top: 25%;
+        left: 50%;
+
+        width: 24%;
+
+        transform: translate(-50%, -50%);
+        animation: fingerPointed 3s infinite;
+    }
+}
+
+@keyframes fingerPointed {
+    0% {
+        transform: translate3d(-50%, -50%, 0);
+    }
+    50% {
+        transform: translate3d(-50%, -30%, 0);
+    }
+    65% {
+        transform: translate3d(-50%, -30%, 0);
+    }
+    100% {
+        transform: translate3d(-50%, -50%, 0);
+    }
+}

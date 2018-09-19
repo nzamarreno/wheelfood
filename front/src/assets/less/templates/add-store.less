@@ -1,0 +1,28 @@
+.addStore {
+    position: relative;
+    z-index: 10;
+
+    margin-top: 3rem;
+
+    background: @color-background;
+
+    &__title {
+        margin-top: 2rem;
+
+        @media screen and (min-width: @sm) {
+            margin-top: 0;
+        }
+    }
+
+    &__line {
+        .line--first {
+            width: 55%;
+            margin-top: 3rem;
+        }
+    }
+
+    &__desc {
+        display: flex;
+        align-items: center;
+    }
+}

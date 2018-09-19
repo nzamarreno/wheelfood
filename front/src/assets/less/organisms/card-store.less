@@ -1,0 +1,139 @@
+.cardStore {
+    position: relative;
+    top: -3rem;
+
+    padding: 2rem;
+
+    animation: turnPage 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+
+    border-radius: @radius @radius 0 0;
+    background: white;
+    box-shadow: 0 3px 169px 0 rgba(75, 68, 67, 0.2);
+
+    &:after {
+        @media screen and (min-width: @sm) {
+            position: absolute;
+            z-index: -10;
+            top: 0;
+            left: 0;
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            content: "";
+            transform: rotate(3deg);
+
+            border-radius: @radius @radius 0 0;
+            background: white;
+            box-shadow: 0 3px 169px 0 rgba(75, 68, 67, 0.2);
+        }
+    }
+
+    &__wrapper {
+        padding: 2rem;
+    }
+
+    &-name {
+        display: flex;
+
+        &__textarea {
+            font-family: @font-primary;
+            font-size: 2rem;
+            font-weight: @bold;
+            line-height: 3rem;
+
+            width: 100%;
+            padding-left: 4rem;
+
+            color: @color-text;
+            border: none;
+
+            @media screen and (min-width: @sm) {
+                font-size: 4rem;
+                line-height: 5rem;
+            }
+
+            &::-webkit-input-placeholder {
+                font-family: @font-primary;
+                font-size: 2rem;
+                font-weight: @bold;
+                line-height: 3rem;
+
+                color: fade(@color-text, 15%);
+
+                @media screen and (min-width: @sm) {
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+            }
+            &::-moz-placeholder {
+                font-family: @font-primary;
+                font-size: 2rem;
+                font-weight: @bold;
+                line-height: 3rem;
+
+                color: fade(@color-text, 15%);
+
+                @media screen and (min-width: @sm) {
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+            }
+            &:-ms-input-placeholder {
+                font-family: @font-primary;
+                font-size: 2rem;
+                font-weight: @bold;
+                line-height: 3rem;
+
+                color: fade(@color-text, 15%);
+
+                @media screen and (min-width: @sm) {
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+            }
+            &:-moz-placeholder {
+                font-family: @font-primary;
+                font-size: 2rem;
+                font-weight: @bold;
+                line-height: 3rem;
+
+                color: fade(@color-text, 15%);
+
+                @media screen and (min-width: @sm) {
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+            }
+        }
+
+        &__operator {
+            width: 130px;
+        }
+    }
+}
+
+@keyframes turnPage {
+    0% {
+        transform: translateX(0%);
+
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(20%);
+
+        opacity: 0;
+    }
+    51% {
+        transform: translateX(-20%);
+
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+
+        opacity: 1;
+    }
+}

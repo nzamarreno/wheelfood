@@ -1,0 +1,137 @@
+.card-choice {
+    &__list {
+        overflow-y: scroll;
+
+        height: 40rem;
+        padding-right: 1rem;
+    }
+
+    &__foodStore {
+        margin-bottom: 1.5rem;
+        padding: 3rem;
+
+        cursor: pointer;
+        animation: itemEntrance 0.5s linear forwards;
+
+        opacity: 0;
+        color: white;
+        border-radius: @radius;
+        background: @gradient;
+    }
+}
+
+// Description
+.card-choice-intitulate {
+    display: flex;
+
+    width: 100%;
+
+    &__icono {
+        width: 4.5rem;
+    }
+
+    &__name {
+        font-size: 2.2rem;
+        font-weight: @semi-bold;
+        line-height: 2rem;
+
+        flex: 1;
+
+        margin-left: 2rem;
+
+        span {
+            font-size: 1.8rem;
+            font-weight: @light;
+
+            display: block;
+        }
+    }
+
+    &__status {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 3.3rem;
+        height: 3.3rem;
+
+        text-align: center;
+
+        border-radius: 50%;
+        background: white;
+
+        &:before {
+            font-family: FontAwesome;
+            font-size: 1.5rem;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            display: inline-block;
+
+            content: "\f00c";
+            transition: all 0.3s;
+            transform: translate(-50%, -250%);
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: auto;
+        }
+
+        &:after {
+            font-family: FontAwesome;
+            font-size: 1.5rem;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            display: inline-block;
+
+            content: "\f08d";
+            transition: all 0.3s;
+            transform: translate(-50%, -50%);
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: auto;
+        }
+
+        &--active {
+            background: @color-text;
+
+            &:before {
+                transition: all 0.3s;
+                transform: translate(-50%, -50%);
+
+                color: white;
+            }
+
+            &:after {
+                transition: all 0.3s;
+                transform: translate(-50%, 250%);
+            }
+        }
+    }
+}
+
+.card-choice-desc {
+    display: flex;
+
+    width: 100%;
+    margin-top: 2rem;
+
+    &__item {
+        font-size: 1.8rem;
+        font-weight: @medium;
+        line-height: 1.8rem;
+
+        flex: 1;
+
+        span {
+            font-size: 1.4rem;
+            font-weight: @light;
+
+            display: block;
+        }
+    }
+}

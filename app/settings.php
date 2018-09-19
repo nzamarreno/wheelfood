@@ -29,8 +29,8 @@ return [
                 'driver'   => 'pdo_mysql',
                 'host'     => 'mysql',
                 'dbname'   => 'foodapi',
-                'user'     => 'root',
-                'password' => 'root',
+                'user'     => 'nicolas',
+                'password' => 'hello',
             ]
         ]
     ],

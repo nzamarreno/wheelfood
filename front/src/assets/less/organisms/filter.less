@@ -1,0 +1,46 @@
+.filter-category {
+    font-size: 2rem;
+    font-weight: @semi-bold;
+
+    display: none;
+    justify-content: space-between;
+
+    margin: 4rem 0;
+    padding: 1rem 3rem;
+
+    color: white;
+    border-radius: @radius;
+    background: @gradient;
+
+    @media screen and (min-width: @md) {
+        display: flex;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        padding: 1.5rem;
+
+        cursor: pointer;
+        transition: background 0.5s, color 0.8s;
+
+        border-radius: @radius;
+
+        &:hover {
+            color: @color-text;
+            background: white;
+        }
+
+        &--active {
+            color: @color-text;
+            background: white;
+        }
+    }
+
+    &__icon {
+        font-size: 3.5rem;
+
+        padding-right: 1rem;
+    }
+}

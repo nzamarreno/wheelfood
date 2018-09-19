@@ -1,0 +1,44 @@
+@xs: 0;
+@sm: 576px;
+@md: 768px;
+@lg: 992px;
+@xl: 1200px;
+
+@enable-grid-classes: true;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the @spacers map, should you need more variation.
+
+@spacer: 1rem;
+@spacers: 0 0, 1 (@spacer * 0.25), 2 (@spacer * 0.5), 3 @spacer, 4 (@spacer * 1.5), 5 (@spacer * 3);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+@sizes: 25 25%, 50 50%, 75 75%, 100 100%;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+@grid-breakpoints: xs 0, sm 576px, md 768px, lg 992px, xl 1200px;
+
+//@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+//@include _assert-starts-at-zero($grid-breakpoints);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+@container-max-widths: sm 540px, md 720px, lg 960px, xl 1140px;
+
+//@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+@grid-columns: 12;
+@grid-gutter-width: 20px;

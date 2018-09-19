@@ -1,0 +1,66 @@
+.input {
+    font-size: 1.8rem;
+    font-weight: @regular;
+
+    height: 4rem;
+    padding: 0 1rem;
+    background: transparent;
+    border: none;
+
+    &::-webkit-input-placeholder {
+        font-family: @font-primary;
+        font-size: 1.8rem;
+        font-weight: @regular;
+    }
+    &::-moz-placeholder {
+        font-family: @font-primary;
+        font-size: 1.8rem;
+        font-weight: @regular;
+    }
+    &:-ms-input-placeholder {
+        font-family: @font-primary;
+        font-size: 1.8rem;
+        font-weight: @regular;
+    }
+    &:-moz-placeholder {
+        font-family: @font-primary;
+        font-size: 1.8rem;
+        font-weight: @regular;
+    }
+
+    &--white{
+        color: white;
+        border-bottom: .1rem solid white;
+
+        &::-webkit-input-placeholder {
+            color: white;
+        }
+        &::-moz-placeholder {
+            color: white;
+        }
+        &:-ms-input-placeholder {
+            color: white;
+        }
+        &:-moz-placeholder {
+            color: white;
+        }
+    }
+
+    &--gray{
+        color: @color-text;
+        border-bottom: .1rem solid @color-text;
+
+        &::-webkit-input-placeholder {
+            color: @color-text;
+        }
+        &::-moz-placeholder {
+            color: @color-text;
+        }
+        &:-ms-input-placeholder {
+            color: @color-text;
+        }
+        &:-moz-placeholder {
+            color: @color-text;
+        }
+    }
+}
