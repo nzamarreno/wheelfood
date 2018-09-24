@@ -32,7 +32,7 @@ $ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:generate:entit
 $ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update
 
 # Apply the changements
-$ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update
+$ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update --force
 ```
 
 ### Configuration _(not necessary)_
