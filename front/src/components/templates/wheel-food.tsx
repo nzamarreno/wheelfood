@@ -1,6 +1,6 @@
 import * as React from "react"
 import { FoodList } from "./../organisms/food-list"
-import { Loader } from "../molecules/loader"
+import { Loader } from "../atoms/loader"
 import { observer, inject } from "mobx-react"
 import { EateryStore } from "../../store"
 import { ConfigStore } from "../../configuration-store"
@@ -49,62 +49,56 @@ export class WheelFood extends React.Component<WheelFoodProps, WheelFoodState> {
         }
 
         return (
-            <>
-                <div className="row">
-                    {this.props.foodStore!.foodStoreSelected.map((x, index) => <div key={index} className="card" />)}
-                </div>
-                <div className="row">
-                    {!this.state.lottery ? (
-                        <>
-                            <div className="col-md-7 wheelfood__loader">
-                                <div className="wheelfood__desc wheelfood__desc--middle">
-                                    <h1>Séléctionnez au moins 5 foodStores</h1>
-                                    <p>Et laisser la chance faire pour vous occupez de votre diner</p>
-                                    <div
-                                        className="wheelfood__button"
-                                        onClick={() => this.setState({ lottery: !this.state.lottery })}
-                                    >
-                                        <span className="fas fa-plus wheelfood__icon" />
-                                        Tentez votre chance
-                                    </div>
-                                </div>
-
-                                <Loader />
-                            </div>
-                            <div className="col-md-5">
-                                <FoodList colorsList={this.gradients} />
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="col-md-4 wheelfood__loader">
-                                <div className="wheelfood__circle">
-                                    <img
-                                        className="wheelfood__picture"
-                                        src={`assets/images/icono/fill/${
-                                            this.state.lottery ? typeOfRandomStore.icono.pictureFill : ""
-                                        }.svg`}
-                                        alt=""
-                                    />
+            <div className="row">
+                {!this.state.lottery ? (
+                    <>
+                        <div className="col-md-7 wheelfood__loader">
+                            <div className="wheelfood__desc wheelfood__desc--middle">
+                                <h1>Séléctionnez au moins 5 foodStores</h1>
+                                <p>Et laisser la chance faire pour vous occupez de votre diner</p>
+                                <div
+                                    className="wheelfood__button"
+                                    onClick={() => this.setState({ lottery: !this.state.lottery })}
+                                >
+                                    <span className="fas fa-plus wheelfood__icon" />
+                                    Tentez votre chance
                                 </div>
                             </div>
-                            <div className="col-md-8">
-                                <div className="wheelfood__desc">
-                                    <p>Ton destin te menera à manger...</p>
-                                    <h1 className="wheelfood__title">Chez {this.state.lottery ? randomFoodStore.name : ""}</h1>
-                                    <div
-                                        className="wheelfood__button wheelfood__button--change"
-                                        onClick={() => this.setState({ lottery: !this.state.lottery })}
-                                    >
-                                        <span className="fas fa-plus wheelfood__icon" />
-                                        Cela ne me convient pas...
-                                    </div>
+                            <Loader />
+                        </div>
+                        <div className="col-md-5">
+                            <FoodList colorsList={this.gradients} />
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className="col-md-4 wheelfood__loader">
+                            <div className="wheelfood__circle">
+                                <img
+                                    className="wheelfood__picture"
+                                    src={`assets/images/icono/fill/${
+                                        this.state.lottery ? typeOfRandomStore.icono.pictureFill : ""
+                                    }.svg`}
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <div className="col-md-8">
+                            <div className="wheelfood__desc">
+                                <p>Ton destin te menera à manger...</p>
+                                <h1 className="wheelfood__title">Chez {this.state.lottery ? randomFoodStore.name : ""}</h1>
+                                <div
+                                    className="wheelfood__button wheelfood__button--change"
+                                    onClick={() => this.setState({ lottery: !this.state.lottery })}
+                                >
+                                    <span className="fas fa-plus wheelfood__icon" />
+                                    Cela ne me convient pas...
                                 </div>
                             </div>
-                        </>
-                    )}
-                </div>
-            </>
+                        </div>
+                    </>
+                )}
+            </div>
         )
     }
 }

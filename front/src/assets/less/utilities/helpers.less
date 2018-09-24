@@ -1,0 +1,36 @@
+.helperqueries() {
+    body {
+        &:before {
+            font-size: 1.2rem;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            padding: 0.5rem 1rem;
+
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+
+            @media screen and (min-width: @xs) {
+                content: "Media Queries xs";
+            }
+
+            @media screen and (min-width: @sm) {
+                content: "Media Queries sm";
+            }
+
+            @media screen and (min-width: @md) {
+                content: "Media Queries md";
+            }
+
+            @media screen and (min-width: @lg) {
+                content: "Media Queries lg";
+            }
+
+            @media screen and (min-width: @xl) {
+                content: "Media Queries xl";
+            }
+        }
+    }
+}

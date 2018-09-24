@@ -5,9 +5,9 @@ import { Filter } from "./components/organisms/filter"
 import { WheelFood } from "./components/templates/wheel-food"
 import { CardAddFoodEatery } from "./components/organisms/card-add-foodstore"
 import { EateryStore } from "./store"
-import { PopinRegister } from "./components/organisms/popinRegister"
+import { PopinRegister } from "./components/organisms/popin-register"
 import { UiStore } from "./ui-store"
-import { Popin } from "./components/organisms/popin"
+import { PopinConnection } from "./components/organisms/popin-connection"
 
 export interface AppProps {
     foodStore?: EateryStore
@@ -46,7 +46,7 @@ export class App extends React.Component<AppProps, AppState> {
                     <main id="main">
                         <div className="container">
                             {this.props.uiStore!.isOpenRegisterPopin && <PopinRegister />}
-                            {this.props.uiStore!.isOpenConnexionPopin && <Popin />}
+                            {this.props.uiStore!.isOpenConnectionPopin && <PopinConnection />}
                             <Header />
                             <Filter />
                             <WheelFood />
@@ -54,7 +54,7 @@ export class App extends React.Component<AppProps, AppState> {
                         <div className="addStore">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-md-6 addStore__desc">
+                                    <div className="col-12 col-lg-5 col-xl-6 addStore__desc">
                                         <div className="addStore__title">
                                             <h1 className="title">Ajoute tes foodStores</h1>
                                             <h2 className="title-baseline">it's easy, fill, launch & eat...</h2>
@@ -63,7 +63,7 @@ export class App extends React.Component<AppProps, AppState> {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-12 col-lg-7 col-xl-6">
                                         <CardAddFoodEatery />
                                     </div>
                                 </div>

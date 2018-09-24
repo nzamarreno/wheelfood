@@ -9,13 +9,13 @@ export interface LoaderStoreProps {
 @inject("foodStore")
 @observer
 export class Loader extends React.Component<LoaderStoreProps, {}> {
-    calculPercent = (): number => {
+    private calculPercent = (): number => {
         const maxChoices = 5
-        let percent = this.props.foodStore!.foodStoreSelected.length / 5 * 100
+        let percent = (this.props.foodStore!.foodStoreSelected.length / 5) * 100
         return 100 - percent
     }
 
-    render() {
+    public render() {
         return (
             <div className="loader">
                 <img

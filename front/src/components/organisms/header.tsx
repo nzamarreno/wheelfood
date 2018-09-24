@@ -2,6 +2,7 @@ import * as React from "react"
 import { inject, observer } from "mobx-react"
 import { EateryStore } from "../../store"
 import { UiStore } from "../../ui-store"
+import { Button } from "../atoms/button"
 
 export interface HeaderProps {
     foodStore?: EateryStore
@@ -50,21 +51,13 @@ export class Header extends React.Component<HeaderProps, {}> {
                         </div>
                     ) : (
                         <div className="col-md-6 header__connexion">
-                            <button
-                                role="button"
-                                className="button button--fill"
-                                onClick={() => (this.props.uiStore!.isOpenConnexionPopin = true)}
-                            >
-                                Connexion <i className="button__icon fas fa-long-arrow-alt-right" />
-                            </button>
+                            <Button type="fill" onClick={() => (this.props.uiStore!.isOpenConnectionPopin = true)}>
+                                Connexion
+                            </Button>
 
-                            <button
-                                role="button"
-                                className="button button--stroke"
-                                onClick={() => (this.props.uiStore!.isOpenRegisterPopin = true)}
-                            >
+                            <Button type="stroke" onClick={() => (this.props.uiStore!.isOpenRegisterPopin = true)}>
                                 Inscription <i className="button__icon fas fa-long-arrow-alt-right" />
-                            </button>
+                            </Button>
                         </div>
                     )}
                 </div>

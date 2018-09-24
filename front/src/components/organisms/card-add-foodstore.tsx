@@ -43,7 +43,6 @@ export class CardAddFoodEatery extends React.Component<CardAddFoodStore, {}> {
     public render() {
         return (
             <div className="cardStore">
-                <i className="fas fa-check" />
                 <div className="cardStore-name">
                     <img className="cardStore-name__operator" src="assets/images/operator.svg" alt="WheelFood" />
                     <textarea

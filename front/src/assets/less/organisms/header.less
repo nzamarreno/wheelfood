@@ -3,8 +3,22 @@
         display: block;
 
         width: 30rem;
+        margin: auto;
+
+        @media screen and (min-width: @sm) {
+            width: 40rem;
+        }
+
+        @media screen and (min-width: @md) {
+            width: 30rem;
+            margin: initial;
+        }
 
         @media screen and (min-width: @lg) {
+            width: 40rem;
+        }
+
+        @media screen and (min-width: @xl) {
             width: 50rem;
         }
     }
@@ -14,13 +28,9 @@
         align-items: center;
         justify-content: center;
 
-        margin-top: 1rem;
+        margin: 1rem 0;
 
-        @media screen and (min-width: @sm) {
-            margin-top: 0;
-        }
-
-        & button:first-child {
+        .button:first-child {
             margin-right: 1rem;
 
             @media screen and (min-width: @sm) {

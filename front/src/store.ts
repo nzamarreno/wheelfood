@@ -21,9 +21,12 @@ export interface User {
 export class EateryStore {
     private nameCookie: string = ""
 
-    @observable public foodStore: FoodStore[] = []
-    @observable public user: User | null
-    @observable public foodStoreSelected: FoodStore[] = []
+    @observable
+    public foodStore: FoodStore[] = []
+    @observable
+    public user: User | null
+    @observable
+    public foodStoreSelected: FoodStore[] = []
 
     constructor() {
         this.nameCookie = "iduser"
