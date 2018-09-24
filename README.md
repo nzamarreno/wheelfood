@@ -1,17 +1,10 @@
-```
-   _____ ___              _____ __             __            __ __ _ __
-  / ___// (_)___ ___     / ___// /_____ ______/ /____  _____/ //_/(_) /_
-  \__ \/ / / __ `__ \    \__ \/ __/ __ `/ ___/ __/ _ \/ ___/ ,<  / / __/
- ___/ / / / / / / / /   ___/ / /_/ /_/ / /  / /_/  __/ /  / /| |/ / /_
-/____/_/_/_/ /_/ /_/   /____/\__/\__,_/_/   \__/\___/_/  /_/ |_/_/\__/
-```
+# WheelFood
 
-**StarterKit whose board Slim Framework 3 & Doctrine**  
-This package is just for create my little API
+Little app for the fondamental question ? _What do we eat today ?_
 
 ## Installation
 
-### Install environment
+### Environment
 
 With Docker it's easy, launch this command and PHP, Composer and MySql will be installed.
 
@@ -19,26 +12,33 @@ With Docker it's easy, launch this command and PHP, Composer and MySql will be i
 $ docker-compose up -d
 ```
 
-### Install Composer dependencies
+### Composer dependencies
 
 Install Composer and theses dependencies
 
 ```bash
-$ docker-compose run composer composer
-```
-
-## Some commands Doctrine
-
-```bash
-# doctrine orm[command] [-options] [path-dest]
-$ php vendor/doctrine/orm/bin/doctrine orm:generate:entities --generate-annotations="true" ./
-
-$ php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update
+$ docker-compose run composer composer install
 ```
 
 ## Database
 
-If you want change database informations, you should change settings in the `settings.php` file and change informations in `docker-compose.yml`. After that, re-build your docker.
+### Doctrine
+
+```bash
+# doctrine orm[command] [-options] [path-dest]
+$ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:generate:entities --generate-annotations="true" ./
+
+# Show the changements on your database
+$ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update
+
+# Apply the changements
+$ docker-compose run php php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update
+```
+
+### Configuration _(not necessary)_
+
+If you want change database informations, you should change settings in the `settings.php` file and change informations in `docker-compose.yml`. After that, re-build your docker.  
+**WARNING:** Change these informations in the `docker-compose.yml`
 
 ```php
 # app/settings
@@ -52,3 +52,7 @@ If you want change database informations, you should change settings in the `set
 ]
 #...
 ```
+
+## Endpoint
+
+You should configure your endpoint in the `front/src/enums/endpoint.ts` file.
