@@ -4,3 +4,6 @@ cache/*
 composer.phar
 front/node_modules
 front/dist
+.idea/
+.DS_Store
+front/package-lock.json

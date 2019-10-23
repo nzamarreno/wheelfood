@@ -56,3 +56,6 @@ If you want change database informations, you should change settings in the `set
 ## Endpoint
 
 You should configure your endpoint in the `front/src/enums/endpoint.ts` file.
+
+## Launch your application
+You can view your application in local when you enter this address `localhost:1112`

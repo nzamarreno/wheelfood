@@ -2,7 +2,6 @@ import * as React from "react"
 import { observer, inject } from "mobx-react"
 import { EateryStore, FoodStore } from "./../../store"
 import { ConfigStore } from "../../configuration-store"
-import {type} from "os"
 
 export interface FoodListProps {
     foodStore?: EateryStore
@@ -35,13 +34,13 @@ export class FoodList extends React.Component<FoodListProps, {}> {
                 <ul className="tags">
                     {this.props.configStore!.filterActive && (
                         <li className="tags__tag">
-                            <i className="tags__icon fas fa-times" onClick={() => this.props.configStore.filterActive = null}/>
+                            <i className="tags__icon fas fa-times" onClick={() => this.props.configStore.filterActive = null} />
                             {this.props.configStore.filterActive.name}
                         </li>
                     )}
                 </ul>
                 <ul className="card-choice__list">
-                 {listFood.length > 0 &&
+                    {listFood.length > 0 &&
                         listFood.map((foodStore, index) => {
                             const colorGradient = this.getRandomInt(0, this.props.colorsList.length - 1)
                             const typeFoodCurrent = this.props.configStore.foodType.filter(x => x.id === foodStore.type)[0]
@@ -54,7 +53,7 @@ export class FoodList extends React.Component<FoodListProps, {}> {
                                     style={{
                                         background: `-webkit-linear-gradient(left, ${this.props.colorsList[colorGradient][0]}, ${
                                             this.props.colorsList[colorGradient][1]
-                                        })`,
+                                            })`,
                                         animationDelay: `${index * 0.3}s`
                                     }}
                                 >
@@ -69,7 +68,7 @@ export class FoodList extends React.Component<FoodListProps, {}> {
                                         <div
                                             className={`card-choice-intitulate__status ${
                                                 foodStore.isSelected ? "card-choice-intitulate__status--active" : ""
-                                            }`}
+                                                }`}
                                             style={{ color: `${this.props.colorsList[colorGradient][1]}` }}
                                         />
                                     </div>
