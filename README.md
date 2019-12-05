@@ -1,6 +1,6 @@
-# WheelFood
-
-Little app for the fondamental question ? _What do we eat today ?_
+<p align="center">
+<img src="https://raw.githubusercontent.com/nzamarreno/wheelfood/master/wheelfood-logo.PNG" width="400px">  
+</p>
 
 ## Installation
 
